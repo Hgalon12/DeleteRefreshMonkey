@@ -12,6 +12,7 @@ namespace DeleeRefreshMonkey.ViewModels
 {
     public class MonkeyViewModel:ViewModelBase
     {
+       
         private ObservableCollection<Monkey> monkeys;
         public ObservableCollection<Monkey> Monkeys
         {
@@ -24,6 +25,13 @@ namespace DeleeRefreshMonkey.ViewModels
                 this.monkeys = value;
                 OnPropertyChanged();
             }
+        }
+        private MonkeyService monkeyService;
+        public MonkeyViewModel(MonkeyService service)
+        {
+            this.monkeyService = service;
+            monkeys = new ObservableCollection<Monkey>();
+            ReadMonkeys();
         }
         public MonkeyViewModel()
         {
@@ -48,8 +56,45 @@ namespace DeleeRefreshMonkey.ViewModels
                 Monkeys.Remove(st);
             }
         }
+        private Object selectedMonkey;
+        public Object SelectedMonkey
+        {
+            get
+            {
+                return this.selectedMonkey;
+            }
+            set
+            {
+                this.selectedMonkey = value;
+                OnPropertyChanged();
+            }
+        }
 
-   
+        public ICommand SingleSelectCommand => new Command(OnSingleSelectStudent);
+
+        async void OnSingleSelectStudent()
+        {
+            if (SelectedMonkey != null)
+            {
+                var navParam = new Dictionary<string, object>()
+            {
+                { "selectedMonkey",SelectedMonkey}
+            };
+                //Add goto here to show details
+                await Shell.Current.GoToAsync($"monkeyDetails", navParam);
+
+                SelectedMonkey = null;
+            }
+        }
+
+
+
+
+
+
+
+
+
         #region Refresh View
         public ICommand RefreshCommand => new Command(Refresh);
         private async void Refresh()
