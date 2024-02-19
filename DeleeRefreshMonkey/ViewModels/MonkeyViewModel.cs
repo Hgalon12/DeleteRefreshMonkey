@@ -77,11 +77,11 @@ namespace DeleeRefreshMonkey.ViewModels
             if (SelectedMonkey != null)
             {
                 var navParam = new Dictionary<string, object>()
-            {
-                { "selectedMonkey",SelectedMonkey}
-            };
+                {
+                    { "selectedMonkey",SelectedMonkey}
+                };
                 //Add goto here to show details
-                await Shell.Current.GoToAsync($"monkeyDetails", navParam);
+                await Shell.Current.GoToAsync("monkeyDetails", navParam);
 
                 SelectedMonkey = null;
             }
