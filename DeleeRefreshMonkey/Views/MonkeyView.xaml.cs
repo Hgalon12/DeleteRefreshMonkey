@@ -3,9 +3,9 @@ using DeleeRefreshMonkey.ViewModels;
 
 public partial class MonkeyView : ContentPage
 {
-	public MonkeyView(MonkeyViewModel vm)
+	public MonkeyView()
 	{
 		InitializeComponent();
-		BindingContext = vm;
+		BindingContext = new MonkeyViewModel();
 	}
 }

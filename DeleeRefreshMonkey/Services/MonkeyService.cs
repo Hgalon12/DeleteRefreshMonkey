@@ -23,7 +23,7 @@ namespace DeleeRefreshMonkey.Services
             Monkeys.Add(new Monkey
             {
                 Name = "Baboon",
-                Location = "Africa & Asia",
+                Location = "Asia",
                 Details = "Baboons are African and Arabian Old World monkeys belonging to the genus Papio, part of the subfamily Cercopithecinae.",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Papio_anubis_%28Serengeti%2C_2009%29.jpg/200px-Papio_anubis_%28Serengeti%2C_2009%29.jpg"
             });
@@ -31,7 +31,7 @@ namespace DeleeRefreshMonkey.Services
             Monkeys.Add(new Monkey
             {
                 Name = "Capuchin Monkey",
-                Location = "Central & South America",
+                Location = "America",
                 Details = "The capuchin monkeys are New World monkeys of the subfamily Cebinae. Prior to 2011, the subfamily contained only a single genus, Cebus.",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Capuchin_Costa_Rica.jpg/200px-Capuchin_Costa_Rica.jpg"
             });
@@ -39,7 +39,7 @@ namespace DeleeRefreshMonkey.Services
             Monkeys.Add(new Monkey
             {
                 Name = "Blue Monkey",
-                Location = "Central and East Africa",
+                Location = "Africa",
                 Details = "The blue monkey or diademed monkey is a species of Old World monkey native to Central and East Africa, ranging from the upper Congo River basin east to the East African Rift and south to northern Angola and Zambia",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/BlueMonkey.jpg/220px-BlueMonkey.jpg"
             });
@@ -47,7 +47,7 @@ namespace DeleeRefreshMonkey.Services
             Monkeys.Add(new Monkey
             {
                 Name = "Squirrel Monkey",
-                Location = "Central & South America",
+                Location = "America",
                 Details = "The squirrel monkeys are the New World monkeys of the genus Saimiri. They are the only genus in the subfamily Saimirinae. The name of the genus Saimiri is of Tupi origin, and was also used as an English name by early researchers.",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Saimiri_sciureus-1_Luc_Viatour.jpg/220px-Saimiri_sciureus-1_Luc_Viatour.jpg"
             });
@@ -63,7 +63,7 @@ namespace DeleeRefreshMonkey.Services
             Monkeys.Add(new Monkey
             {
                 Name = "Howler Monkey",
-                Location = "South America",
+                Location = "America",
                 Details = "Howler monkeys are among the largest of the New World monkeys. Fifteen species are currently recognised. Previously classified in the family Cebidae, they are now placed in the family Atelidae.",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Alouatta_guariba.jpg/200px-Alouatta_guariba.jpg"
             });
@@ -79,7 +79,7 @@ namespace DeleeRefreshMonkey.Services
             Monkeys.Add(new Monkey
             {
                 Name = "Mandrill",
-                Location = "Southern Cameroon, Gabon, Equatorial Guinea, and Congo",
+                Location = "Congo",
                 Details = "The mandrill is a primate of the Old World monkey family, closely related to the baboons and even more closely to the drill. It is found in southern Cameroon, Gabon, Equatorial Guinea, and Congo.",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Mandrill_at_san_francisco_zoo.jpg/220px-Mandrill_at_san_francisco_zoo.jpg"
             });
@@ -95,7 +95,7 @@ namespace DeleeRefreshMonkey.Services
             Monkeys.Add(new Monkey
             {
                 Name = "Red-shanked Douc",
-                Location = "Vietnam, Laos",
+                Location = "America",
                 Details = "The red-shanked douc is a species of Old World monkey, among the most colourful of all primates. This monkey is sometimes called the \"costumed ape\" for its extravagant appearance. From its knees to its ankles it sports maroon-red \"stockings\", and it appears to wear white forearm length gloves. Its attire is finished with black hands and feet. The golden face is framed by a white ruff, which is considerably fluffier in males. The eyelids are a soft powder blue. The tail is white with a triangle of white hair at the base. Males of all ages have a white spot on both sides of the corners of the rump patch, and red and white genitals.",
                 ImageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Portrait_of_a_Douc.jpg/159px-Portrait_of_a_Douc.jpg"
             });

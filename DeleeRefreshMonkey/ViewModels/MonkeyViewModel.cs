@@ -32,12 +32,15 @@ namespace DeleeRefreshMonkey.ViewModels
             this.monkeyService = service;
             monkeys = new ObservableCollection<Monkey>();
             ReadMonkeys();
+            
         }
         public MonkeyViewModel()
         {
             monkeys = new ObservableCollection<Monkey>();
             IsRefreshing = false;
             ReadMonkeys();
+            Loc = new ObservableCollection<LocationModel>();
+            Fillloc();
         }
 
         private async void ReadMonkeys()
@@ -45,6 +48,51 @@ namespace DeleeRefreshMonkey.ViewModels
             MonkeyService service = new MonkeyService();
             List<Monkey> list = await service.GetMonkeys();
             this.Monkeys = new ObservableCollection<Monkey>(list);
+           
+        }
+        private ObservableCollection<LocationModel> loc;
+        private ObservableCollection<LocationModel> Loc
+        {
+            get
+            {
+                return this.loc;
+            }
+            set
+            {
+                this.loc = value;
+                OnPropertyChanged();
+            }
+        }
+        private LocationModel selectedLoc;
+        public LocationModel SelectedLoc
+        {
+            get { return this.selectedLoc; }
+            set
+            {
+                this.selectedLoc = value;
+                OnPickerChanged();
+                OnPropertyChanged();
+            }
+        }
+
+        private void OnPickerChanged()
+        {
+            ReadMonkeys();
+            if (SelectedMonkey != null)
+            {
+                List<Monkey> tobeRemoved = monkeys.Where(s => s.Location != SelectedLoc.LocationM).ToList();
+                foreach (Monkey monkey in tobeRemoved)
+                {
+                    Monkeys.Remove(monkey);
+                }
+            }
+        }
+        private void Fillloc()
+        {
+            Loc.Add(new LocationModel { Id = 0, LocationM = "Asia"});
+            Loc.Add(new LocationModel { Id = 0, LocationM = "America"});
+            Loc.Add(new LocationModel { Id = 0, LocationM = "China"});
+            Loc.Add(new LocationModel { Id = 0, LocationM = "Brazil"});
         }
 
         public ICommand DeleteCommand => new Command<Monkey>(RemoveMonkey);
@@ -86,12 +134,7 @@ namespace DeleeRefreshMonkey.ViewModels
                 SelectedMonkey = null;
             }
         }
-
-
-
-
-
-
+        
 
 
 
@@ -104,6 +147,7 @@ namespace DeleeRefreshMonkey.ViewModels
 
             IsRefreshing = false;
         }
+      
 
         private bool isRefreshing;
         public bool IsRefreshing
@@ -119,5 +163,7 @@ namespace DeleeRefreshMonkey.ViewModels
             }
         }
         #endregion
+       
+
     }
 }
